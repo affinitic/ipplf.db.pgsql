@@ -8,6 +8,7 @@ from sqlalchemy import (Table,
                         func,
                         DateTime,
                         Float,
+                        Boolean,
                         ForeignKey)
 
 def getDemandeIntervention(metadata):
