@@ -48,5 +48,7 @@ def getDemandeIntervention(metadata):
                  Column('di_probleme_horticol_demandeur', Text()),
                  Column('di_probleme_humidite_demandeur', Text()),
                  Column('di_probleme_autre_motif_demandeur', Text()),
+                 Column('di_commentaire_ipplf', Text()),
+                 Column('di_etat_ipplf', Boolean()),
                  autoload=autoload,
                  extend_existing=True)
