@@ -1,0 +1,12 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <utility
+      name="ipplfMappings"
+      factory=".initializer.ipplfModel"
+      provides="z3c.sqlalchemy.interfaces.IModelProvider"
+      />
+
+</configure>
