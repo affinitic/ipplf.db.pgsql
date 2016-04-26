@@ -7,9 +7,7 @@ from sqlalchemy import (Table,
                         Sequence,
                         func,
                         DateTime,
-                        Float,
-                        Boolean,
-                        ForeignKey)
+                        Boolean)
 
 def getDemandeIntervention(metadata):
     autoload = False
@@ -20,6 +18,7 @@ def getDemandeIntervention(metadata):
                         Sequence('demande_intervention_di_pk_seq'),
                         primary_key=True),
                  Column('di_date_creation', DateTime(), default=func.now()),
+                 Column('di_demandeur_proprio', Boolean()),
                  Column('di_nom_demandeur', Text()),
                  Column('di_prenom_demandeur', Text()),
                  Column('di_gsm_demandeur', Text()),
@@ -49,5 +48,7 @@ def getDemandeIntervention(metadata):
                  Column('di_probleme_autre_motif_demandeur', Text()),
                  Column('di_commentaire_ipplf', Text()),
                  Column('di_etat_ipplf', Text()),
+                 Column('di_date_modification', DateTime(), default=func.now()),
+                 Column('di_employe_modification', Text()),
                  autoload=autoload,
                  extend_existing=True)
